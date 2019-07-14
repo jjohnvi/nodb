@@ -1,10 +1,12 @@
 import React from "react";
-import axios from "axios";
+import OutputInput from "./OutputInput";
 
 function Header() {
   return (
     <header className="Header">
-      <h1 className="Title">WiseMind</h1>
+      <h1 className="Title">
+        <OutputInput text="WiseMind" />
+      </h1>
     </header>
   );
 }

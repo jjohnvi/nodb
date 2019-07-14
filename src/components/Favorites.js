@@ -45,7 +45,7 @@ class Favorites extends Component {
     return (
       <div>
         {faveArr}
-        <Footer className="favorites__footer" />
+        {/* <Footer className="favorites__footer" /> */}
       </div>
     );
   }
