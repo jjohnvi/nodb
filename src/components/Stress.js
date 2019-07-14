@@ -18,6 +18,15 @@ class Stress extends Component {
     axios.put(`/api/quotes/${id}`).then(() => this.getAllQuotes());
   };
 
+  // let elements =
+
+  // gridview = () => {
+  //   i;
+  //   for(let i = 0; i < elements.length; i++) {
+  //     elements[i].style.width = "50%";
+  //   }
+  // }
+
   componentDidMount() {
     this.getAllQuotes();
     // this.setState({ allCollect: response.data });
@@ -31,18 +40,25 @@ class Stress extends Component {
       })
       .catch(error => {
         console.log(error);
-        this.setState({
-          error: "SORRY BUT ERROR"
-        });
       });
-    axios.get("/api/quotes/inspirational").then(response => {
-      console.log(response);
-      this.setState({ inspirationalCollect: response.data });
-    });
-    axios.get("/api/quotes/intellectual").then(response => {
-      console.log(response);
-      this.setState({ intellectualCollect: response.data });
-    });
+    axios
+      .get("/api/quotes/inspirational")
+      .then(response => {
+        console.log(response);
+        this.setState({ inspirationalCollect: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    axios
+      .get("/api/quotes/intellectual")
+      .then(response => {
+        console.log(response);
+        this.setState({ intellectualCollect: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   render() {
@@ -61,27 +77,29 @@ class Stress extends Component {
     }
     let collectDisplay = collect.map((val, index) => {
       return (
-        <p className="quotes" key={index}>
-          {val.quote}
-          <button
-            className="right__buttons"
-            onClick={() => {
-              axios.post("/api/favorites", val);
-            }}
-          >
-            Keep!
-          </button>
-          {collect[index].likes}
-          <button
-            className="right__buttons"
-            onClick={() => this.likeQuote(val.id)}
-          >
-            Like
-          </button>
-        </p>
+        <div>
+          <p className="quotes" key={index}>
+            {val.quote}
+            <button
+              className="right__buttons"
+              onClick={() => {
+                axios.post("/api/favorites", val);
+              }}
+            >
+              Keep!
+            </button>
+            {collect[index].likes}
+            <button
+              className="right__buttons"
+              onClick={() => this.likeQuote(val.id)}
+            >
+              Like
+            </button>
+          </p>
+        </div>
       );
     });
-    return <div className="upper__body">{collectDisplay}</div>;
+    return <div className="row">{collectDisplay}</div>;
   }
 }
 
