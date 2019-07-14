@@ -4,6 +4,8 @@ import axios from "axios";
 import Stress from "./components/Stress";
 import Header from "./components/Header";
 import Favorites from "./components/Favorites";
+import Footer from "./components/Footer";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -21,15 +23,29 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <nav>
-          <button onClick={() => this.viewChange("Stress")}>Stress</button>
-          <button onClick={() => this.viewChange("Inspirational")}>
+        <nav className="Navbar">
+          <button
+            className="nav__buttons"
+            onClick={() => this.viewChange("Stress")}
+          >
+            Stress
+          </button>
+          <button
+            className="nav__buttons"
+            onClick={() => this.viewChange("Inspirational")}
+          >
             Inspirational
           </button>
-          <button onClick={() => this.viewChange("Intellectual")}>
+          <button
+            className="nav__buttons"
+            onClick={() => this.viewChange("Intellectual")}
+          >
             Intellectual
           </button>
-          <button onClick={() => this.viewChange("Favorites")}>
+          <button
+            className="nav__buttons"
+            onClick={() => this.viewChange("Favorites")}
+          >
             Favorites
           </button>
         </nav>
@@ -43,6 +59,8 @@ class App extends Component {
         {this.state.view === "Favorites" ? (
           <Favorites type={"favorites"} />
         ) : null}
+
+        <Footer />
       </div>
     );
   }

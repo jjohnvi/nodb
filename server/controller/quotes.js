@@ -14,7 +14,7 @@ let quotes = [
     id: 2,
     type: "stress",
     quote:
-      "If another can easily anger you, it is because you are off balance with yourself",
+      "If another can easily anger you, it is because you are off balance with yourself.",
     image: "",
     author: "Unknown",
     likes: 0,
@@ -199,7 +199,7 @@ let quotes = [
     id: 21,
     type: "inspirational",
     quote:
-      "People who believe in the power of effort to overcome challenges are more resilient and ultimately more successful",
+      "People who believe in the power of effort to overcome challenges are more resilient and ultimately more successful.",
     image: "",
     author: "",
     likes: 0,
@@ -229,7 +229,7 @@ let quotes = [
     id: 24,
     type: "inspirational",
     quote:
-      "If you plan on being anything less than you are capable of being, you will probably be unhappy all the days of your life",
+      "If you plan on being anything less than you are capable of being, you will probably be unhappy all the days of your life.",
     image: "",
     author: "Abraham Maslow",
     likes: 0,
@@ -238,7 +238,7 @@ let quotes = [
   {
     id: 25,
     type: "inspirational",
-    quote: "Becoming is better than being",
+    quote: "Becoming is better than being.",
     image: "",
     author: "",
     likes: 0,
@@ -266,7 +266,7 @@ let quotes = [
   {
     id: 28,
     type: "inspirational",
-    quote: "Better an oops than a what if",
+    quote: "Better an oops than a what if.",
     image: "",
     author: "",
     likes: 0,
@@ -305,7 +305,7 @@ getQuotes = (req, res) => {
 };
 
 getAllQuotes = (req, res) => {
-  res.json(quotes);
+  res.status(200).json(quotes);
 };
 
 addFave = (req, res) => {
@@ -332,7 +332,7 @@ likeQuote = (req, res) => {
   const index = quotes.findIndex(quote => quote.id == id);
   quotes[index].likes++;
 
-  res.status(200).json(quotes);
+  res.sendStatus(200);
 };
 
 module.exports = {

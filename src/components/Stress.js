@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import Header from "./Header";
 import axios from "axios";
+import Footer from "./Footer";
+import "../App.css";
 
 class Stress extends Component {
   constructor(props) {
@@ -12,10 +15,14 @@ class Stress extends Component {
   }
 
   likeQuote = id => {
-    axios.put(`/api/quotes/${id}`).then(response => {});
+    axios.put(`/api/quotes/${id}`).then(() => this.getAllQuotes());
   };
 
   componentDidMount() {
+    this.getAllQuotes();
+    // this.setState({ allCollect: response.data });
+  }
+  getAllQuotes = () => {
     axios
       .get("/api/quotes/stress")
       .then(response => {
@@ -36,10 +43,7 @@ class Stress extends Component {
       console.log(response);
       this.setState({ intellectualCollect: response.data });
     });
-    axios.get("/api/quotes/").then(response => {
-      this.setState({ allCollect: response.data });
-    });
-  }
+  };
 
   render() {
     const {
@@ -57,9 +61,10 @@ class Stress extends Component {
     }
     let collectDisplay = collect.map((val, index) => {
       return (
-        <p key={index}>
+        <p className="quotes" key={index}>
           {val.quote}
           <button
+            className="right__buttons"
             onClick={() => {
               axios.post("/api/favorites", val);
             }}
@@ -67,11 +72,16 @@ class Stress extends Component {
             Keep!
           </button>
           {collect[index].likes}
-          <button onClick={() => this.likeQuote(val.id)}>Like</button>
+          <button
+            className="right__buttons"
+            onClick={() => this.likeQuote(val.id)}
+          >
+            Like
+          </button>
         </p>
       );
     });
-    return <div>{collectDisplay}</div>;
+    return <div className="upper__body">{collectDisplay}</div>;
   }
 }
 
