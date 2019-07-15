@@ -19,16 +19,6 @@ body {
   color: #132238;
 }
 
-/* .footer {
-  display: flex;
-  width: 100vw;
-  height: 10rem;
-  background-color: grey;
-  align-items: flex-end;
-  position: fixed;
-  bottom: 0;
-} */
-
 .App {
   /* border: solid blue; */
   display: flex;
@@ -46,17 +36,6 @@ h1 {
   border-bottom: 3px black solid;
   /* border: solid salmon; */
 }
-/* 
-.footer {
-  font-family: "Inter";
-  font-weight: bold;
-  font-style: normal;
-  font-size: 36px;
-  display: flex;
-  justify-content: center;
-  border-bottom: 3px black solid;
-  /* border: solid salmon; 
-} */
 
 .Navbar {
   display: flex;
@@ -88,18 +67,19 @@ h1 {
 }
 
 .right__buttons {
-  /* height: 1.2rem;
-  border-radius: 3px; */
+  border-radius: 13px;
   font-family: "Inter";
   display: flex;
   flex-direction: row;
   color: #ebf0f6;
-  background: transparent;
+  background: #364e68;
   border: none;
   /* margin-top: 20px; */
   font-size: 12pt;
   /* border: white 0.7px solid; */
   align-items: center;
+  margin: 5px;
+  padding: 8px;
 }
 .fave {
   display: flex;
