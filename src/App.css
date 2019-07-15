@@ -37,6 +37,10 @@ h1 {
   /* border: solid salmon; */
 }
 
+.title {
+  margin: auto 0;
+}
+
 .Navbar {
   display: flex;
   width: 100vw;
