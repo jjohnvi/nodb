@@ -335,11 +335,17 @@ likeQuote = (req, res) => {
   res.sendStatus(200);
 };
 
+addQuote = (req, res) => {
+  quotes.push(req.body);
+  res.sendStatus(200);
+};
+
 module.exports = {
   getQuotes,
   addFave,
   getFave,
   deleteFave,
   likeQuote,
-  getAllQuotes
+  getAllQuotes,
+  addQuote
 };

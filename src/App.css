@@ -30,7 +30,7 @@ h1 {
   font-family: "Inter";
   font-weight: bold;
   font-style: normal;
-  font-size: 45px;
+  font-size: 70px;
   display: flex;
   justify-content: center;
   border-bottom: 3px black solid;
@@ -39,6 +39,9 @@ h1 {
 
 .title {
   margin: auto 0;
+  margin-bottom: 20px;
+  letter-spacing: 15px;
+  text-transform: lowercase;
 }
 
 .Navbar {
@@ -68,6 +71,7 @@ h1 {
   background-color: #364e68;
   color: #98ccd3;
   filter: drop-shadow(0 1px 5px #364e68);
+  letter-spacing: 3px;
 }
 
 .right__buttons {

@@ -6,7 +6,7 @@ function Header(props) {
     <header className="Header">
       <h1 className="hh1">
         <p className="title" onClick={props.viewHome}>
-          <OutputInput text="WiseMind" />
+          <OutputInput text="WiseMind." />
         </p>
       </h1>
     </header>

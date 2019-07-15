@@ -6,7 +6,8 @@ const {
   getFave,
   deleteFave,
   likeQuote,
-  getAllQuotes
+  getAllQuotes,
+  addQuote
 } = require("./controller/quotes");
 const bodyParser = require("body-Parser");
 
@@ -20,6 +21,7 @@ app.get("/api/favorites/", getFave);
 app.delete(`/api/favorites/:id`, deleteFave);
 app.put("/api/quotes/:id", likeQuote);
 app.get("/api/quotes/", getAllQuotes);
+app.post("/api/quotes/", addQuote);
 
 const PORT = 9000;
 app.listen(PORT, () => {
