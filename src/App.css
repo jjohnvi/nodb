@@ -79,7 +79,11 @@ h1 {
   /* border: white 0.7px solid; */
   align-items: center;
   margin: 5px;
-  padding: 8px;
+  padding: 0px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  justify-content: center;
 }
 .fave {
   display: flex;
