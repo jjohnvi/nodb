@@ -34,12 +34,13 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  min-height: 100vh;
 }
 h1 {
   font-family: "Inter";
   font-weight: bold;
   font-style: normal;
-  font-size: 36px;
+  font-size: 45px;
   display: flex;
   justify-content: center;
   border-bottom: 3px black solid;
@@ -78,7 +79,7 @@ h1 {
   width: 20rem;
   /* font-family: optima; */
   font-size: 2rem;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   border: none;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   background-color: #364e68;
@@ -87,9 +88,23 @@ h1 {
 }
 
 .right__buttons {
-  height: 1.2rem;
-  border-radius: 3px;
+  /* height: 1.2rem;
+  border-radius: 3px; */
   font-family: "Inter";
+  display: flex;
+  flex-direction: row;
+  color: #ebf0f6;
+  background: transparent;
+  border: none;
+  /* margin-top: 20px; */
+  font-size: 12pt;
+  /* border: white 0.7px solid; */
+  align-items: center;
+}
+.fave {
+  display: flex;
+  font-family: "Inter";
+  margin-top: 20px;
 }
 
 .upper__body {
@@ -125,14 +140,30 @@ h1 {
 
 .quotes {
   /* justify-content: space-around; */
-  border: 1px black solid;
+  /* border: 1px black solid; */
+  border-radius: 10px;
   float: left;
   width: 27%;
   padding: 10px;
   height: 200px;
   margin-left: 50px;
+  background-color: #132238;
+  color: #ebf0f6;
+  text-align: center;
+  filter: drop-shadow(0 1px 5px #364e68);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .favorites__footer {
   border-bottom: 3px grey solid;
+}
+
+.button__class {
+  display: flex;
+  align-items: center;
+  /* border: white 1px solid; */
+  margin-top: 20px;
 }

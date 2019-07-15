@@ -3,6 +3,7 @@ import Header from "./Header";
 import axios from "axios";
 import Footer from "./Footer";
 import css from "../App.css";
+import Display from "./Display";
 
 class Favorites extends Component {
   constructor(props) {
@@ -29,9 +30,10 @@ class Favorites extends Component {
     let faveArr = fave.map((val, index) => {
       console.log(val.id);
       return (
-        <p className="favorites__quotes" key={index}>
+        <p className="favorites__quotes quotes" key={index}>
           {val.quote}
           <button
+            className="right__buttons fave"
             onClick={() => {
               this.deleteFave(val.id);
             }}
@@ -43,7 +45,7 @@ class Favorites extends Component {
     });
 
     return (
-      <div>
+      <div className="row">
         {faveArr}
         {/* <Footer className="favorites__footer" /> */}
       </div>

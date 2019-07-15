@@ -3,6 +3,7 @@ import Header from "./Header";
 import axios from "axios";
 import Footer from "./Footer";
 import "../App.css";
+import Display from "./Display";
 
 class Stress extends Component {
   constructor(props) {
@@ -77,26 +78,32 @@ class Stress extends Component {
     }
     let collectDisplay = collect.map((val, index) => {
       return (
-        <div>
-          <p className="quotes" key={index}>
-            {val.quote}
-            <button
-              className="right__buttons"
-              onClick={() => {
-                axios.post("/api/favorites", val);
-              }}
-            >
-              Keep!
-            </button>
-            {collect[index].likes}
-            <button
-              className="right__buttons"
-              onClick={() => this.likeQuote(val.id)}
-            >
-              Like
-            </button>
-          </p>
-        </div>
+        <Display
+          i={index}
+          val={val}
+          likeQuote={this.likeQuote}
+          type={this.props.type}
+        />
+        // <div>
+        //   <p className="quotes" key={index}>
+        //     {val.quote}
+        //     <button
+        //       className="right__buttons"
+        //       onClick={() => {
+        //         axios.post("/api/favorites", val);
+        //       }}
+        //     >
+        //       Keep!
+        //     </button>
+        //     {collect[index].likes}
+        //     <button
+        //       className="right__buttons"
+        //       onClick={() => this.likeQuote(val.id)}
+        //     >
+        //       Like
+        //     </button>
+        //   </p>
+        // </div>
       );
     });
     return <div className="row">{collectDisplay}</div>;
