@@ -1,11 +1,13 @@
 import React from "react";
 import OutputInput from "./OutputInput";
 
-function Header() {
+function Header(props) {
   return (
     <header className="Header">
       <h1 className="Title">
-        <OutputInput text="WiseMind" />
+        <p onClick={props.viewHome}>
+          <OutputInput text="WiseMind" />
+        </p>
       </h1>
     </header>
   );

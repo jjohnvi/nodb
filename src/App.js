@@ -19,10 +19,14 @@ class App extends Component {
     this.setState({ view: viewParam });
   };
 
+  viewHome = viewParam => {
+    this.setState({ view: "Home" });
+  };
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header viewHome={this.viewHome} />
         <nav className="Navbar">
           <button
             className="nav__buttons"
