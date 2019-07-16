@@ -337,7 +337,14 @@ likeQuote = (req, res) => {
 
 addQuote = (req, res) => {
   quotes.push(req.body);
-  res.sendStatus(200);
+  let newQuotes = quotes.filter(id => {
+    if (id.type === req.body.type) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  res.json(newQuotes);
 };
 
 module.exports = {

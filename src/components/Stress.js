@@ -81,6 +81,7 @@ class Stress extends Component {
         <Display
           i={index}
           val={val}
+          key={index}
           likeQuote={this.likeQuote}
           type={this.props.type}
         />

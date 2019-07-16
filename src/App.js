@@ -4,6 +4,7 @@ import axios from "axios";
 import Stress from "./components/Stress";
 import Header from "./components/Header";
 import Favorites from "./components/Favorites";
+import AddQuote from "./components/AddQuote";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -19,7 +20,7 @@ class App extends Component {
     this.setState({ view: viewParam });
   };
 
-  viewHome = viewParam => {
+  viewHome = () => {
     this.setState({ view: "Home" });
   };
 
@@ -53,6 +54,9 @@ class App extends Component {
             Favorites
           </button>
         </nav>
+        <div>
+          <AddQuote />
+        </div>
         {this.state.view === "Stress" ? <Stress type={"stress"} /> : null}
         {this.state.view === "Inspirational" ? (
           <Stress type={"inspirational"} />
